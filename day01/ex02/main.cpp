@@ -1,15 +1,20 @@
 
-#include "ZombieEvent.hpp"
 #include "Zombie.hpp"
+#include "ZombieEvent.hpp"
 
 int main()
 {
-    Zombie *z = new Zombie("zombie1", "type1");
-    ZombieEvent *z2 = new ZombieEvent();
-    z->announce();
-    delete z;
-    z2->setZombieType("type2");
-    z2->newZombie("zombie2");
-    delete z2;
+    ZombieEvent ze;
+    ze.setZombieType("type1");
+    std::cout << ze.get_ZombieType() << std::endl;
+    std::cout << "----------------------------" << std::endl;
+
+    Zombie *z1;
+    z1 = ze.newZombie("zombie");
+    z1->announce();
+    delete z1;
+    std::cout << "----------------------------" << std::endl;
+
+    ze.randomChump();
     return (0);
 }

@@ -6,13 +6,10 @@
 class Pony
 {
 private:
-    std::string name;
-    std::string last_name;
-    std::string nickname;
+    std::string _name;
+    std::string _color;
 public:
-    void    ponyOnTheStack();
-    void    ponyOnTheHeap();
-    Pony(std::string name_, std::string last_name_, std::string nickname_);
+    Pony(std::string, std::string);
     ~Pony();
 };
 
