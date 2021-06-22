@@ -23,8 +23,8 @@ void    ZombieEvent::randomChump()
     std::string name_z[3] = {"zombie1", "zombie2", "zombie3"};
     srand(time(NULL));
     r = rand() % 3;
-    
-    Zombie *z = new Zombie(name, get_ZombieType());name = name_z[r];
+    name = name_z[r];
+    Zombie *z = new Zombie(name, get_ZombieType());
     z->announce();
     delete z;
 }

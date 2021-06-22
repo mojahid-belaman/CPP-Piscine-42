@@ -1,8 +1,8 @@
 #include "Human.hpp"
 
-Brain   Human::getBrain()
+const   Brain&   Human::getBrain()
 {
-    return(this->b);
+    return(this->_b);
 }
 
 std::string   Human::identify()

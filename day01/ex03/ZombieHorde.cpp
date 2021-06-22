@@ -2,7 +2,7 @@
 
 void    ZombieHorde::announce()
 {
-    for (size_t i = 0; i < this->n; i++)
+    for (int i = 0; i < this->n; i++)
     {
         this->z[i].announce();
     }
