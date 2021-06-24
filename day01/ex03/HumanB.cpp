@@ -8,7 +8,6 @@ HumanB::HumanB(std::string name)
 void    HumanB::setWeapon(Weapon & w)
 {
     _w = &w;
-
 }
 
 void    HumanB::attack()

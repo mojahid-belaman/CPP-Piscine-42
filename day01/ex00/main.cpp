@@ -1,21 +1,20 @@
-#include "Pony.hpp"
 
-void    ponyOnTheStack()
-{
-    Pony p("pony1", "white");
-    std::cout << "this object declare in stack!!" << std::endl;
-}
+#include "Zombie.hpp"
 
-void    ponyOnTheHeap()
-{
-    Pony *p = new Pony("pony2", "black");
-    std::cout << "this object allocated in heap!!" << std::endl;
-    delete p;
-}
+
+void randomChump(std::string name);
+Zombie* newZombie( std::string name );
 
 int main()
 {
-    ponyOnTheStack();
-    ponyOnTheHeap();
+    Zombie z("Zombie1");
+    z.announce();
+
+    Zombie *z2;
+    z2 = newZombie("Zombie2");
+    z2->announce();
+    delete z2;
+
+    randomChump("Zombie3");
     return (0);
 }
