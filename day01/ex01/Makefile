@@ -17,8 +17,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp 
-	clang++ $(CFLAGS) -c $< -o $@
+%.o: %.cpp $(HDR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ)
@@ -26,4 +26,4 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean $(NAME)
+re: fclean

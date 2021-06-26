@@ -9,16 +9,24 @@ SRC =	main.cpp\
 		HumanA.cpp\
 		HumanB.cpp
 
+HDR = HumanA.hpp\
+	  HumanB.hpp\
+	  Weapon.hpp
+
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp $(HDR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+	rm -rf $(OBJ)
+
+fclean: clean
 	rm -rf $(NAME)
 
-fclean:
-	rm -rf $(NAME)
-
-re: fclean $(NAME)
+re: fclean 
