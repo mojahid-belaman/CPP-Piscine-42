@@ -3,8 +3,6 @@
 int main()
 {
     karen k;
-    k.complain("debug");
-    // void (karen::*ptr) (void) = &karen::debug;
-    
+    k.complain("DEBUG");
     return (0);
 }

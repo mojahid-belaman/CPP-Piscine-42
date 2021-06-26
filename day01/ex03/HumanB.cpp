@@ -1,8 +1,7 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name) : _name(name), _w(nullptr)
 {
-    this->_name = name;
 }
 
 void    HumanB::setWeapon(Weapon & w)

@@ -1,18 +1,15 @@
-NAME = weapon
+NAME = karenFilter
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC  = clang++
 
-SRC =	main.cpp\
-		Weapon.cpp\
-		HumanA.cpp\
-		HumanB.cpp
-
+SRC = 	main.cpp\
+		Karen.cpp
 
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(src)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:

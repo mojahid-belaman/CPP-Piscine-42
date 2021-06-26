@@ -2,7 +2,7 @@
 
 void    Zombie::announce()
 {
-    std::cout << _name << " BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void    Zombie::setZombie(std::string name)
@@ -13,7 +13,7 @@ void    Zombie::setZombie(std::string name)
 Zombie::Zombie(std::string name)
 {
     this->_name = name;
-    std::cout << "Create Object Zombie!" << std::endl;
+    std::cout << this->_name << ": Create Object Zombie!" << std::endl;
 }
 
 Zombie::Zombie()
@@ -24,5 +24,5 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
-    std::cout << "Destroy Object Zombie!" << std::endl;
+    std::cout << this->_name << ": Destroy Object Zombie!" << std::endl;
 }

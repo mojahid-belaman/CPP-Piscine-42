@@ -8,15 +8,22 @@ SRC = 	Zombie.cpp\
 		ZombieHorde.cpp\
 		main.cpp
 
+HDR = Zombie.hpp
+
+OBJ = $(SRC:.cpp=.o)
+
 all: $(NAME)
 
-$(NAME): $(src)
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp 
+	clang++ $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(NAME)
+	rm -rf $(OBJ)
 
-fclean:
+fclean: clean
 	rm -rf $(NAME)
 
 re: fclean $(NAME)

@@ -21,15 +21,33 @@ void karen::error( void )
 
 void karen::complain(std::string level)
 {
-
-    ptr tab[] = {&karen::debug, &karen::info, &karen::warning, &karen::error};
-    std::cout << tab[0] << std::endl;
-}
-
-karen::karen(/* args */)
-{
-}
-
-karen::~karen()
-{
+    int i;
+    int nb = -1;
+    std::string tab_str[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    ptr tab_add[] = {&karen::debug, &karen::info, &karen::warning, &karen::error};
+    for (i = 0; i < 4; i++)
+    {
+        if (level == tab_str[i])
+        {
+            nb = i;
+            break ;
+        }
+    }
+    switch (nb)
+    {
+        case 0:
+            (this->*(tab_add[i]))();
+            break;
+        case 1:
+            (this->*(tab_add[i]))();
+            break;
+        case 2:
+            (this->*(tab_add[i]))();
+            break;
+        case 3:
+            (this->*(tab_add[i]))();
+            break;
+        default :
+            return ;
+    }
 }

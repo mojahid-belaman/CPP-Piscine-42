@@ -8,11 +8,10 @@ SRC = main.cpp
 
 all: $(NAME)
 
-$(NAME): $(src)
+$(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:
-	rm -rf $(NAME)
 
 fclean:
 	rm -rf $(NAME)
