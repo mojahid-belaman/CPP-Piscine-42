@@ -4,9 +4,9 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC  = clang++
 
-SRC = 	main.cpp\
-		Karen.cpp
-	
+SRC =	main.cpp\
+		karen.cpp
+
 HDR = karen.hpp
 
 OBJ = $(SRC:.cpp=.o)
@@ -25,4 +25,4 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean
+re: fclean $(NAME)

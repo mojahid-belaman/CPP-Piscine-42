@@ -8,7 +8,8 @@ int main(int ac, char **av)
     if (ac == 4)
     {
         std::string s1, s2, line, file_name;
-        std::fstream file_in, file_out;
+        std::ifstream file_in;
+        std::ofstream file_out;
         size_t pos;
 
         s1 = av[2];
@@ -37,15 +38,17 @@ int main(int ac, char **av)
             pos = 0;
             while ((pos = line.find(s1, pos)) != std::string::npos)
             {
-                line.replace(pos, s1.length(), s2);
-                pos += s2.length();
+                line.erase(pos, s1.length());
+                line.insert(pos, s2);
             }
-            file_out << line << std::endl;
+            file_out << line;
+            if (!file_in.eof())
+                file_out << std::endl;
         }
         file_in.close();
         file_out.close();
     }
     else
-        std::cout << "Error: Wrong number of  arguments!" << std::endl;
+        std::cout << "Error: Wrong number of arguments!" << std::endl;
     return (0);
 }

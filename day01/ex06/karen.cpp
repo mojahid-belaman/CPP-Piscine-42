@@ -57,6 +57,7 @@ void karen::complain(std::string level)
                 (this->*(tab_add[nb]))();
                 break;
             default :
+                std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
                 return ;
         }
         nb = nb + 1;

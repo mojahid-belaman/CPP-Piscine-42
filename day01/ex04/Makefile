@@ -16,4 +16,4 @@ clean:
 fclean:
 	rm -rf $(NAME)
 
-re: fclean
+re: fclean $(NAME)
