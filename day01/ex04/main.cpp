@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string.h>
-#include <errno.h>
 
 int main(int ac, char **av)
 {
@@ -40,6 +39,7 @@ int main(int ac, char **av)
             {
                 line.erase(pos, s1.length());
                 line.insert(pos, s2);
+                pos += s2.length();
             }
             file_out << line;
             if (!file_in.eof())
