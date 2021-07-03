@@ -11,8 +11,10 @@ public:
     ~test();
     test& operator= (const test& ts)
     {
+        if (this != &ts)
         this->_var = ts._var;
-        std::cout << this << std::endl;
+        std::cout << "Adress t1 from operator: " << &ts << std::endl;
+        std::cout << "Adress t2 (this) from operator: " << this << std::endl;
         return (*this);
     }
     void    print()
@@ -32,8 +34,10 @@ test::~test()
 int main()
 {
     test t1(10, 1337);
-    test t2, t3;
-    (t2 = t3) = t1;
+    test t2;
+    t2 = t1;
 
-    t1.print();t2.print();t3.print();//t4.print();
+    std::cout << &t1 << std::endl;
+    std::cout << &t2 << std::endl;
+    t1.print();t2.print();//t3.print();//t4.print();
 }

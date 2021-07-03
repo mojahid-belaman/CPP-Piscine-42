@@ -2,6 +2,7 @@
 #define FIXED_H
 
 #include <iostream>
+#include <tgmath.h>
 
 class Fixed
 {
@@ -21,4 +22,5 @@ public:
     int toInt( void ) const;
 };
 
+std::ostream& operator<<(std::ostream &, Fixed const &);
 #endif
