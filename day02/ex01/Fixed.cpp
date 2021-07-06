@@ -8,14 +8,13 @@ Fixed::Fixed(): _fixPointValue(0)
 Fixed::Fixed(const int nb_i)
 {
     std::cout << "Int constructor called" << std::endl;
-    this->_fixPointValue = (float)nb_i * (float)(1 << _nbFractBit);
+    this->_fixPointValue = nb_i * (1 << _nbFractBit);
 }
 
 Fixed::Fixed(const float nb_f)
 {
     std::cout << "Float constructor called" << std::endl;
     this->_fixPointValue = roundf(nb_f * (1 << this->_nbFractBit));
-    std::cout << "fixedPointValue = " << this->_fixPointValue << std::endl;
 }
 
 int Fixed::toInt(void) const
