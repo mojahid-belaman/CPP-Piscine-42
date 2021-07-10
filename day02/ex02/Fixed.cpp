@@ -59,7 +59,7 @@ bool  Fixed::operator>=(const Fixed & f)
 
 bool  Fixed::operator<=(const Fixed & f)
 {
-    return (_fixPointValue <= f._fixPointValue);
+    return (this->_fixPointValue <= f._fixPointValue);
 }
 
 bool  Fixed::operator==(const Fixed & f)
@@ -162,7 +162,6 @@ Fixed &Fixed::max(Fixed &f1, Fixed &f2)
         return f1;
     else
         return f2;
-    
 }
 
 Fixed const &Fixed::max(const Fixed &f1, const Fixed &f2)
