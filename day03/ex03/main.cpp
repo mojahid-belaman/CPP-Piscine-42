@@ -2,7 +2,7 @@
 
 int main()
 {
-    DiamondTrap ft("test");
-
+    DiamondTrap ft("Mojahid"); 
+    ft.whoAmI();
     return 0;
 }

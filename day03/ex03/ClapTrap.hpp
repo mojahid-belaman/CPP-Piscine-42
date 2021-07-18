@@ -13,7 +13,6 @@ protected:
 public:
     ClapTrap();
     ClapTrap(std::string);
-    ClapTrap(std::string , int , int , int );
     ClapTrap(const ClapTrap &);
     ClapTrap &operator=(const ClapTrap &);
     ~ClapTrap();

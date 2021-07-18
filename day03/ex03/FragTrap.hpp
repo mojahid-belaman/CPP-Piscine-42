@@ -5,11 +5,12 @@
 
 class  FragTrap : virtual public ClapTrap
 {
-private:
-    /* data */
 public:
      FragTrap();
      FragTrap(std::string);
+     FragTrap(int, int);
+     FragTrap(const FragTrap &);
+     FragTrap &operator=(const FragTrap &);
     ~FragTrap();
     void highFivesGuys(void);
 };

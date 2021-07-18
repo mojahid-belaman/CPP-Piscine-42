@@ -5,12 +5,9 @@ ClapTrap::ClapTrap()
     std::cout << "Object ClapTrap is Created!" << std::endl;
 }
 
-// ClapTrap::ClapTrap(std::string name, int hp, int ep, int ad) : _name(name), _hitpoint(10), _energie_point(10), _attack_damage(0)
-// {
-// }
-
 ClapTrap::ClapTrap(std::string name)
 {
+    std::cout << "Constructor Parametrize the ClapTrap is Called!" << std::endl;
     this->_name = name;
     this->_hitpoint = 10;
     this->_energie_point = 10;
@@ -19,17 +16,18 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap &new_ct)
 {
+    std::cout << "Constructor Copy the ClapTrap is Called!" << std::endl;
     *this = new_ct;
     return ;
 }
 
 ClapTrap &ClapTrap::operator= (const ClapTrap &new_ct)
 {
+    std::cout << "Assignement operator is Called!" << std::endl;
     this->_name = new_ct._name;
     this->_hitpoint = new_ct._hitpoint;
     this->_energie_point = new_ct._energie_point;
     this->_attack_damage = new_ct._attack_damage;
-    
     return *this;
 }
 
@@ -47,7 +45,6 @@ void    ClapTrap::takeDamage(unsigned int amount)
 void    ClapTrap::beRepaired(unsigned int amount)
 {
     std::cout << "Be Repaired " << amount << std::endl;
-
 }
 
 ClapTrap::~ClapTrap()

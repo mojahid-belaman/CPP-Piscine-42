@@ -1,6 +1,6 @@
-NAME = fragtrap
+NAME = diamontrap
 
-CFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
+CFLAGS = -Wall -Wextra -Werror -Wno-shadow -std=c++98
 
 CC = clang++
 

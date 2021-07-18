@@ -2,8 +2,8 @@
 
 int main()
 {
-    FragTrap ft("test");
-    ft.attack("Yassir");
+    FragTrap ft("Zakaria");
+    ft.attack("Ayoub");
     ft.highFivesGuys();
     return 0;
 }
