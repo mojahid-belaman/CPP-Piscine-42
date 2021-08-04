@@ -15,6 +15,18 @@ std::string const &AMateria::getType() const
     return (this->_type);
 }
 
+AMateria::AMateria(const AMateria &copy_amateria)
+{
+    *this = copy_amateria;
+}
+
+AMateria &AMateria::operator=(const AMateria &new_amateria)
+{
+    if (this != &new_amateria)
+        this->_type = new_amateria._type;
+    return (*this);
+}
+
 AMateria::~AMateria()
 {
     std::cout << "Destroy Object AMateria!" << std::endl;
