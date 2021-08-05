@@ -6,9 +6,9 @@ CC  = clang++
 
 SRC =	main.cpp \
 		AMateria.cpp \
-		Character.cpp \
 		Cure.cpp \
 		Ice.cpp \
+		Character.cpp \
 		MateriaSource.cpp
 
 HDR =	AMateria.hpp \
