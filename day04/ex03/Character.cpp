@@ -2,7 +2,6 @@
 
 Character::Character()
 {
-    std::cout << "Constructor Default the Character is Called!" << std::endl;
     this->index_of_materia = 0;
     for (size_t i = 0; i < 4; i++)
     {
@@ -71,11 +70,9 @@ void Character::use(int idx, ICharacter &target)
 
 Character::~Character()
 {
-    std::cout << "Destroy Object Character!" << std::endl;
     for (int i = 0; i < 4; i++)
     {
         if (arr_materia[i])
             delete arr_materia[i];
-        arr_materia[i] = NULL;
     }
 }

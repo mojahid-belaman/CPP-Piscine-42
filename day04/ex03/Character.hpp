@@ -1,7 +1,10 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
-#include "ICharacter.hpp"
+# include "Ice.hpp"
+# include "Cure.hpp"
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
 class Character : public ICharacter
 {

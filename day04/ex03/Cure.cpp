@@ -2,7 +2,6 @@
 
 Cure::Cure() : AMateria("cure")
 {
-    std::cout << "Constructor Default the Cure is Called!" << std::endl;
 }
 
 Cure::Cure(const Cure &copy_cure)
@@ -30,5 +29,4 @@ void    Cure::use(ICharacter& target)
 
 Cure::~Cure()
 {
-    std::cout << "Destroy Object Cure!" << std::endl;
 }

@@ -2,7 +2,6 @@
 
 Ice::Ice() : AMateria("ice")
 {
-    std::cout << "Constructor Default the Ice is Called!" << std::endl;
 }
 
 Ice::Ice(const Ice &copy_ice)
@@ -30,5 +29,4 @@ void    Ice::use(ICharacter& target)
 
 Ice::~Ice()
 {
-    std::cout << "Destroy Object Ice!" << std::endl;
 }

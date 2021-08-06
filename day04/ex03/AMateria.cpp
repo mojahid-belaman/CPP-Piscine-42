@@ -27,7 +27,11 @@ AMateria &AMateria::operator=(const AMateria &new_amateria)
     return (*this);
 }
 
+void    AMateria::use(ICharacter &target)
+{
+    std::cout << target.getName() << std::endl;
+}
+
 AMateria::~AMateria()
 {
-    std::cout << "Destroy Object AMateria!" << std::endl;
 }
