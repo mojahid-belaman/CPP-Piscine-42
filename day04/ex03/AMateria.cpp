@@ -29,7 +29,8 @@ AMateria &AMateria::operator=(const AMateria &new_amateria)
 
 void    AMateria::use(ICharacter &target)
 {
-    std::cout << target.getName() << std::endl;
+    (void)target;
+    return ;
 }
 
 AMateria::~AMateria()
