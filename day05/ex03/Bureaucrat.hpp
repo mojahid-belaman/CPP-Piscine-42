@@ -24,14 +24,14 @@ public:
     };
     Bureaucrat();
     Bureaucrat(std::string const, int);
-    Bureaucrat(Bureaucrat const &);
-    Bureaucrat &operator=(Bureaucrat const &);
     std::string getName() const;
     int getGrade() const;
     void    increment();
     void    decrement();
     ~Bureaucrat();
     void    signForm(Form &);
+    void    executeForm(Form const &);
+
 };
 
 std::ostream & operator <<(std::ostream &, Bureaucrat &);

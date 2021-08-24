@@ -20,7 +20,9 @@ public:
             const char *what() const throw();
     };
     Bureaucrat();
-    Bureaucrat(std::string const &, int);
+    Bureaucrat(std::string const, int);
+    Bureaucrat(Bureaucrat const &);
+    Bureaucrat &operator=(Bureaucrat const &);
     std::string getName() const;
     int getGrade() const;
     void    increment();

@@ -21,6 +21,7 @@ std::string Form::get_name() const
 {
     return ("\e[1;32m" + this->_name + "\e[0m");
 }
+
 int Form::get_gradesign() const
 {
     return (this->_grade_sign);
@@ -29,7 +30,7 @@ int Form::get_grade_execute() const
 {
     return (this->_grade_execute);
 }
-bool    Form::get_sighned() const
+bool    Form::get_signed() const
 {
     return (this->_issigned);
 }
@@ -39,9 +40,7 @@ void    Form::beSigned(Bureaucrat &b)
     if (b.getGrade() <= this->_grade_sign)
         this->_issigned = true;
     else
-    {
         throw GradeTooLowException();
-    }
 }
 
 const char * Form::GradeTooHighException::what() const throw()
@@ -52,6 +51,11 @@ const char * Form::GradeTooHighException::what() const throw()
 const char * Form::GradeTooLowException::what() const throw()
 {
     return ("\e[1;31mThe grade is too low!\e[0m");
+}
+
+const char * Form::FormIsNotSigned::what() const throw()
+{
+    return ("\e[1;31mThe Form Is Not Signed!\e[0m");
 }
 
 Form::Form(Form const &f) : _name(f._name), _grade_sign(f._grade_sign), _grade_execute(f._grade_execute)
@@ -66,9 +70,18 @@ Form &Form::operator=(Form const &f)
     return (*this);
 }
 
-
 Form::~Form()
 {
+}
+
+void    Form::execute(Bureaucrat const & executor) const
+{
+    if (get_signed() == false)
+        throw FormIsNotSigned();
+    else if (executor.getGrade() > this->_grade_execute)
+        throw GradeTooLowException();
+    else
+        Action();
 }
 
 std::ostream &operator<<(std::ostream &o, Form &f)
@@ -77,6 +90,6 @@ std::ostream &operator<<(std::ostream &o, Form &f)
         + "\e[1;32m" << f.get_gradesign() << "\e[0m" << " grade to sign it, and "
         << "\e[1;32m" << f.get_grade_execute() << "\e[0m"
         << " grade to execute it, and Status of the Form "
-        << ((f.get_sighned()) ? "\e[1;32mIs Signed!\e[0m" : "\e[1;32mIs Not Signed!\e[0m") << std::endl;
+        << ((f.get_signed()) ? "\e[1;32mIs Signed!\e[0m" : "\e[1;32mIs Not Signed!\e[0m") << std::endl;
     return (o);
 }

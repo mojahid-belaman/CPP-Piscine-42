@@ -25,7 +25,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
     return "\e[1;31mthe Bureaucrat grade gets too low\e[0m";
 }
 
-Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name)
 {
     std::cout << "Constructor Parametrise is Called!" << std::endl;
     if (grade < 1)
@@ -53,6 +53,18 @@ void    Bureaucrat::decrement()
 Bureaucrat::~Bureaucrat()
 {
     return ;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat const &b) : _name(b._name)
+{
+    *this = b;
+}
+
+Bureaucrat &Bureaucrat::operator=(Bureaucrat const &b)
+{
+    if (this != &b)
+        this->_grade = b._grade;
+    return (*this);
 }
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat &b)

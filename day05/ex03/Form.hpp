@@ -16,15 +16,13 @@ private:
 public:
     Form();
     Form(std::string const, int const, int const);
-    Form(Form const &);
-    Form &operator=(Form const &);
     std::string get_name() const;
     int get_gradesign() const;
     int get_grade_execute() const;
-    bool    get_sighned() const;
+    bool    get_signed() const;
     void beSigned(Bureaucrat &);
-    ~Form();
-
+    virtual ~Form();
+    virtual void Action() const = 0;
     class GradeTooHighException : public std::exception
     {
         public:
@@ -36,6 +34,14 @@ public:
         public:
             const char *what() const throw();
     };
+    
+    class FormIsNotSigned : public std::exception
+    {
+        public:
+            const char *what() const throw();
+    };
+
+    void    execute(Bureaucrat const &) const;
 
 };
 

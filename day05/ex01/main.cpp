@@ -5,8 +5,8 @@ int main()
 {
     try
     {   
-        Bureaucrat b("Mojahid", 7);
-        Form f("test_form", 3, 6, true);
+        Bureaucrat b("Mojahid", 2);
+        Form f("test_form", 3, 6);
         b.signForm(f);
         std::cout << f;
     }
