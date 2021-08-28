@@ -32,6 +32,7 @@ Character::Character(const Character &new_char)
 Character &Character::operator= (const Character &new_char)
 {
     if (this != &new_char)
+    
     {
         this->_name = new_char._name;
         this->index_of_materia = new_char.index_of_materia;

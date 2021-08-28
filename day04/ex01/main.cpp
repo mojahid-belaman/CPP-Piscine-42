@@ -4,7 +4,7 @@
 
 int main()
 {
-    int nb = 4;
+    int nb = 2;
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 

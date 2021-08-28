@@ -7,11 +7,15 @@ CC  = clang++
 SRC =	main.cpp \
 		Animal.cpp \
 		Dog.cpp \
-		Cat.cpp
+		Cat.cpp \
+		WrongCat.cpp \
+		WrongAnimal.cpp
 
 HDR =	Animal.hpp \
 		Dog.hpp \
-		Cat.hpp
+		Cat.hpp \
+		WrongCat.hpp \
+		WrongAnimal.hpp
 
 
 OBJ = $(SRC:.cpp=.o)

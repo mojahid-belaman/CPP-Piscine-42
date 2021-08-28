@@ -6,6 +6,18 @@ Dog::Dog()
     this->_type = "Dog";
 }
 
+Dog::Dog(const Dog &d)
+{
+    *this = d;
+}
+
+Dog &Dog::operator=(const Dog &d)
+{
+    if (this != &d)
+        this->_type = d._type;
+    return (*this);
+}
+
 void    Dog::makeSound() const
 {
     std::cout << "Dog makeSound Called!" << std::endl;
