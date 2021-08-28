@@ -1,52 +1,49 @@
 #include <iostream>
+#include <fstream>
 
-class Cpolygon
-{
-protected:
-    int _w, _h;
-public:
-    Cpolygon(/* args */);
-    void    set_var(int w, int h)
-    {
-        _w = w;
-        _h = h;
-    }
-    ~Cpolygon();
-};
-
-class Ctriangle : public Cpolygon
+class test
 {
 private:
-    /* data */
+    std::string const _name;
+    int _grade;
 public:
-    Ctriangle(/* args */);
-    int     set_area()
+    test()
     {
-        return (_w * _h);
+        std::cout << "Constructor Default\n";
     }
-    ~Ctriangle();
+    test(std::string name, int grade) : _name(name)
+    {
+        _grade = grade;
+    }
+
+    test(test &copy) : _name(copy._name)
+    {
+        std::cout << "Constructor the copy" << std::endl;
+        *this = copy;
+    }
+
+    test &operator= (test &new_tst)
+    {
+        std::cout << "Assignement operator" << std::endl;
+        if (this != &new_tst)
+            this->_grade = new_tst._grade;
+        return (*this);
+    }
+    void    display()
+    {
+        std::cout << "name = " + _name << "\ngrade = " << _grade << std::endl;
+    }
+    ~test()
+    {
+        return ;
+    }
 };
-
-Ctriangle::Ctriangle(/* args */)
-{
-}
-
-Ctriangle::~Ctriangle()
-{
-}
-
-
-Cpolygon::Cpolygon(/* args */)
-{
-}
-
-Cpolygon::~Cpolygon()
-{
-}
 
 int main()
 {
-    Ctriangle tr;
-    tr.set_var(4,  5);
-    std::cout << tr.set_area() << std::endl;
+    test t1("Mojahid", 1337);
+    t1.display();
+    test t2 = t1;
+    t2.display();
+
 }

@@ -8,8 +8,6 @@
 
 class Intern
 {
-private:
-    
 public:
     Intern();
     Intern(Intern const &);
