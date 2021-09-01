@@ -30,7 +30,7 @@ void    ShrubberyCreationForm::Action() const
 {
         std::ofstream ofs;
         std::string str_file = this->_target + "_shrubbery";
-        ofs.open(str_file.c_str(), std::ios::out);
+        ofs.open(str_file, std::ios::out);
         if (ofs.is_open())
         {
             ofs << "                                                    ___" << std::endl;
