@@ -8,7 +8,10 @@ SRC =	main.cpp \
 		Convert_char.cpp \
 		Convert_int.cpp \
 		Convert_float.cpp \
-		Convert_double.cpp
+		Convert_double.cpp \
+		Check_float.cpp \
+		Check_double.cpp \
+		Check_int.cpp
 
 
 HDR =	Convert.hpp

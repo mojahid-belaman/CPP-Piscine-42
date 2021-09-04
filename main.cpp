@@ -1,5 +1,7 @@
+
 #include <iostream>
-#include <fstream>
+#include <string>
+
 
 class test
 {
@@ -41,9 +43,8 @@ public:
 
 int main()
 {
-    test t1("Mojahid", 1337);
-    t1.display();
-    test t2 = t1;
-    t2.display();
+    std::string num = "42.1";
+double temp = ::atof(num.c_str());
 
+std::cout << temp << std::endl;
 }
