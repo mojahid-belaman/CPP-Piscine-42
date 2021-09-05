@@ -8,6 +8,7 @@ struct Data
     int nb;
 };
 
-uintptr_t serialize(Data* ptr);
+uintptr_t   serialize(Data* ptr);
+Data*   deserialize(uintptr_t raw);
 
 #endif

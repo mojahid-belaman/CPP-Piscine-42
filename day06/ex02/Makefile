@@ -1,14 +1,20 @@
-NAME = serialize
+NAME = base
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC  = clang++
 
 SRC =	main.cpp \
-		Serialize.cpp
+		Base.cpp \
+		A.cpp \
+		B.cpp \
+		C.cpp
 
 
-HDR =	Serialize.hpp
+HDR =	Base.hpp \
+		A.hpp \
+		B.hpp \
+		C.hpp
 
 
 OBJ = $(SRC:.cpp=.o)
