@@ -14,8 +14,18 @@ public:
     Array<T>(unsigned int);
     Array<T>(Array const &);
     Array<T> &operator=(Array const &);
-    T &operator new[](std::size_t);
+    T &operator[](unsigned int);
+    size_t size();
     ~Array();
+
+    class outOflimit : public std::exception
+    {
+        public:
+            const char *what() const throw()
+            {
+                return "this element is out of the limits!";
+            }
+    };
 };
 
 #endif
