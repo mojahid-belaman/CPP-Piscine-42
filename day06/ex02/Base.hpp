@@ -6,14 +6,8 @@
 
 class Base
 {
-private:
-    
 public:
-    Base();
-    virtual ~Base();
+    virtual ~Base() {};
 }; 
-
-Base    *generate(void);
-void    identify(Base* p);
 
 #endif

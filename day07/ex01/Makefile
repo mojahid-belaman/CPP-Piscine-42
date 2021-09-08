@@ -1,15 +1,12 @@
-NAME = base
+NAME = iter
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC  = clang++
 
-SRC =	main.cpp 
+SRC =	main.cpp
 
-HDR =	Base.hpp \
-		A.hpp \
-		B.hpp \
-		C.hpp
+HDR =	iter.hpp
 
 
 OBJ = $(SRC:.cpp=.o)

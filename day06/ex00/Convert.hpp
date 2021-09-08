@@ -16,4 +16,5 @@ bool    is_scientific(std::string str);
 int     check_float(std::string str);
 int     check_double(std::string str);
 int     check_int(std::string str);
+bool    is_scientific_f(std::string _str);
 #endif

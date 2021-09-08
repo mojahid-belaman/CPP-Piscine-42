@@ -5,11 +5,6 @@
 
 class B : public Base
 {
-private:
-    
-public:
-    B();
-    ~B();
 };
 
 #endif

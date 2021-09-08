@@ -21,6 +21,8 @@ void    Convert_double(std::string str)
     }
     else if (is_scientific(str))
         std::cerr << str << std::endl;
+    else if (is_scientific_f(str))
+        std::cerr << str.substr(0, str.length() - 1) << std::endl;
     else
         std::cout << static_cast<double>(str[0]) << ".0" << std::endl;
 

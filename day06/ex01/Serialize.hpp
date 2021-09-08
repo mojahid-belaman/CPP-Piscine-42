@@ -5,7 +5,9 @@
 
 struct Data
 {
+    std::string str1;
     int nb;
+    std::string str2;
 };
 
 uintptr_t   serialize(Data* ptr);

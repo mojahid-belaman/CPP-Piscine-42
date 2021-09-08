@@ -4,8 +4,6 @@ int check_double(std::string str)
 {
     int i = 0;
     int num_simi = 0;
-    // if (str[str.length() - 1] != 'f')
-    //     return (0);
     if (str[i] == '-' || str[i] == '+')
         i++;
     while (i < (int)str.length())

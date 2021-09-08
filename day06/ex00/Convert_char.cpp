@@ -2,7 +2,21 @@
 
 bool    is_scientific(std::string _str)
 {
-    std::string science[] = {"nan", "inf", "-inf", "+inf", "-inff", "+inff", "inff", "nanf"};
+    std::string science[] = {"nan", "inf", "-inf", "+inf"};
+    size_t n = sizeof(science)/sizeof(science[0]);
+    int i = 0;
+    while (i < static_cast<int>(n))
+    {
+        if (science[i] ==_str)
+            return (true);
+        i++;
+    }
+    return (false);
+}
+
+bool    is_scientific_f(std::string _str)
+{
+    std::string science[] = {"nanf", "inff", "-inff", "+inff"};
     size_t n = sizeof(science)/sizeof(science[0]);
     int i = 0;
     while (i < static_cast<int>(n))
@@ -18,7 +32,7 @@ void    Convert_char(std::string str, int &err)
 {
     if (str.size() > 1 && !isdigit(str[0]))
     {
-         if (is_scientific(str))
+         if (is_scientific(str) || is_scientific_f(str))
          {
             std::cout << "char: impossible" << std::endl;
             return ;
@@ -27,6 +41,7 @@ void    Convert_char(std::string str, int &err)
         err = 1;
         return ;
     }
+    
     std::cout << "char: ";
     if (str.size() == 1 && !isdigit(str[0]))
         std::cout << "'" << static_cast<char>(str[0]) << "'" << std::endl;

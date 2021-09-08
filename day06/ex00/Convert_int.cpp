@@ -11,7 +11,7 @@ void    Convert_int(std::string str)
         std::cout << nb_i << std::endl;
     }
 
-    else if (is_scientific(str))
+    else if (is_scientific(str) || is_scientific_f(str))
         std::cout << "impossible" << std::endl;
     else
         std::cout << static_cast<int>(str[0]) << std::endl;
