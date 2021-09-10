@@ -21,10 +21,7 @@ public:
     class outOflimit : public std::exception
     {
         public:
-            const char *what() const throw()
-            {
-                return "this element is out of the limits!";
-            }
+            const char *what() const throw();
     };
 };
 

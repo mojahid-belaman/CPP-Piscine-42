@@ -21,7 +21,6 @@ Array<T>::Array(unsigned int n) : _n(n)
     {
         this->_arr[i] = 0;
     }
-    
 }
 
 template <typename T>
@@ -59,7 +58,11 @@ size_t Array<T>::size()
     return this->_n;
 }
 
-
+template <typename T>
+const char *Array<T>::outOflimit::what() const throw()
+{
+    return "this element is out of the limits!";
+}
 
 int main()
 {
@@ -91,7 +94,5 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-    
-    
     return (0);
 }

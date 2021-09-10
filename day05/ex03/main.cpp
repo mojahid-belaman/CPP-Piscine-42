@@ -4,6 +4,6 @@ int main()
 {
     Intern someRandomIntern;
     Form* rrf;
-    rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+    rrf = someRandomIntern.makeForm("presidentialpardon", "Bender");
     rrf->Action();
 }

@@ -1,26 +1,25 @@
 #include "iter.hpp"
 
 template <typename T>
-void    dis_content(T val)
+void   dis_content(T const & val)
 {
     std::cout << val << std::endl;
 }
 
 template <typename T>
-void    iter(T *arr, T len, void myFunc(T))
+void    iter(T *arr, int len, void func(T const &elem))
 {
     for (int i = 0; i < len; i++)
     {
-        myFunc(arr[i]);
+        func(arr[i]);
     }
 }
-
 int main()
 {
-    // char arr1[] = {'f', 'r', 'e', 'f'};
-    int arr2[] = {1337, 42, 19, 2021};
+    char arr1[] = {'f', 'r', 'e', 'f'};
+    // int arr2[] = {1337, 42, 19, 2021};
     // double arr3[] = {1337.42, 42.1337, 19.42, 2021.5};
-    int size = sizeof(arr2) / sizeof(arr2[0]);
-    iter<int>(arr2, size, dis_content);
+    int size = sizeof(arr1) / sizeof(arr1[0]);
+    iter<char>(arr1, size, dis_content);
     return (0);
 }
