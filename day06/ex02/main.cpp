@@ -6,8 +6,7 @@
 Base *generate(void)
 {
     srand(time(NULL));
-    // char c[] = {'A', 'B', 'C'};
-    // static_cast<void>(c);
+
     int nb = rand() % 3;
     if (nb == 0)
         return (new A());
