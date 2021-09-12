@@ -12,7 +12,6 @@ void    easyfind(T b, int occu)
 
 int main()
 {
-    // int arr[3] = {1337, 42, 19};
     std::array<int, 3> arr = {1337, 42, 19};
     for (size_t i = 0; i < arr.size(); i++)
     {

@@ -15,6 +15,7 @@ public:
     span(span const &);
     span &operator=(span const &);
     void    addNumber(int);
+    void    addNumber(std::vector<int>::iterator, std::vector<int>::iterator);
     int shortestSpan();
     int longestSpan();
     class outOflimit : public std::exception
@@ -27,7 +28,6 @@ public:
     public:
         const char *what() const throw();
     };
-    void    print_arr();
     ~span();
 };
 

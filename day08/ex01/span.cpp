@@ -36,6 +36,16 @@ void    span::addNumber(int nb)
 
 }
 
+void    span::addNumber(std::vector<int>::iterator first, std::vector<int>::iterator last)
+{
+    while (first < last)
+    {
+        addNumber(*first);
+        first++;
+    }
+
+}
+
 const char *span::outOflimit::what() const throw()
 {
     return "ERROR: Array Is Full!";
@@ -70,5 +80,5 @@ const char *span::NoNumber::what() const throw()
 
 span::~span()
 {
-    // v.clear();
+    v.clear();
 }
