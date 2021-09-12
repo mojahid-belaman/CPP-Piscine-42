@@ -4,6 +4,7 @@
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
 
+
 int main()
 {
     const Animal* meta = new Animal();
