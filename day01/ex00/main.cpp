@@ -1,7 +1,6 @@
 
 #include "Zombie.hpp"
 
-
 int main()
 {
     Zombie z("Zombie1");
